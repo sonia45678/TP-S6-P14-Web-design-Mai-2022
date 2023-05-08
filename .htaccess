@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^/]+)/?$ moreinfo/$1 [L]
+    RewriteRule ^verify/([^/]+)/([^/]+)/([^/]+)$ /verify?page=$1&email=$2&mdp=$3 [L]
+</IfModule>
